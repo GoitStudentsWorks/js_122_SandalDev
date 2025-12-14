@@ -16,7 +16,7 @@
     pointer-events: none;
 }
 
-/* клас відкритого меню */
+/* відкрите меню */
 .mobile-menu-section.open {
     transform: translateY(0) scale(1);
     opacity: 1;
