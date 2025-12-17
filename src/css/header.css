@@ -16,6 +16,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 72px;
+    background-color: #f6f4f1;
     position: fixed;
         top: 0;
         left: 0; 
@@ -42,6 +43,7 @@
     .header-container {
         justify-content: flex-start;
         padding: 0 64px;
+        max-width: 1440px;
     }
 
     .header-nav {
