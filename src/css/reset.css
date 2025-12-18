@@ -4,6 +4,7 @@
 }
 
 
+
 body {
   margin: 0;
 }
@@ -17,6 +18,12 @@ h6 {
   margin: 0;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+main {
+    padding-top: 72px;
+}
 
 p {
   margin: 0 0 8px 0;
