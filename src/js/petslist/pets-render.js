@@ -4,6 +4,9 @@ const refs = {
     petsList: document.querySelector('.pets-list'),
     showMore: document.querySelector('.show-more'),
     loader: document.querySelector('.js-loader'), 
+    backdrop: document.querySelector('.modalpet-backdrop'),
+    modal: document.querySelector('.modal-window-pet'),
+    modalCloseBtn: document.querySelector('.modalpet-close'),
 };
 
 function renderMore(pets) {
@@ -57,7 +60,7 @@ function petTemplate(pet) {
     .join(' '); 
 
     return `
-    <li class="pet-card">
+     <li class="pet-card" data-id="${pet._id}">
         <img src="${pet.image}" alt="${pet.shortDescription}" class="pet-image" width="392" height="309"> 
         <div class="pet-description-container">
         <div class="sub-description">
