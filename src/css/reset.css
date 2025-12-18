@@ -1,8 +1,9 @@
-*,
-*::before,
-*::after {
+html{
+    scroll-behavior: smooth;
 }
-
+main {
+    padding-top: 72px;
+}
 
 
 body {
