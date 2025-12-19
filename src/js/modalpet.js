@@ -1,6 +1,5 @@
-import {  getPetsList } from './petslist/pets-api';
 import { refs } from './petslist/pets-render';
-import axios from 'axios';
+import { petsData } from './partials.js';
 
 refs.petsList.addEventListener('click', async e => {
     const petCard = e.target.closest('li');
@@ -8,10 +7,18 @@ refs.petsList.addEventListener('click', async e => {
     console.log('something');
     const id = petCard.dataset.id;
     console.log(id);
-    const allPets = (await getAllPetsList()).animals;
+    if (!id || id === 'undefined') {
+        console.error('Invalid data-id on pet card');
+        return;
+    }
+    const allPets = petsData;
     console.log(allPets);
     const petItem = allPets.find(pet => pet._id === id);
     console.log(petItem);
+    if (!petItem) {
+        console.error('Pet not found');
+        return;
+    }
     const markup = renderPetModal(petItem);
     refs.modal.innerHTML = markup;
     openModal();
@@ -33,19 +40,6 @@ function handleCloseModal(e) {
     } else {
         return;
     }
-};
-
-async function getAllPetsList() {
-    const url = 'https://paw-hut.b.goit.study/api/animals';
-
-
-    try {
-        const res = await axios.get(url);
-        return res.data;
-      } catch (error) {
-        console.error('Error:', error);
-        return []; 
-      }
 };
 
 function renderPetModal(pet) {
