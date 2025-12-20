@@ -102,9 +102,11 @@
             background-color 0.2s ease,
             box-shadow 0.2s ease,
             transform 0.1s ease;
+        color: #fff;
     }
     .btn-header:hover {
         background-color: #eee9e3;
+        color: black;
     }
     .btn-header:focus-visible {
         background-color: #eee9e3;

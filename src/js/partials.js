@@ -10,7 +10,7 @@
      categories: document.querySelector('.pets-categories'),
      petsList: document.querySelector('.pets-list'),
      showMore: document.querySelector('.show-more'),
-     loader: document.querySelector('.js-loader') 
+     loader: document.querySelector('.js-loader')
  }
 
  let currentPage = 1; 
@@ -109,7 +109,6 @@
          const petsMarkup = petsTemplate(petsResult.animals);
          refs.petsList.innerHTML = petsMarkup;
          totalPages = Math.ceil(petsResult.totalItems / limit);
-         console.log(totalPages);
          hideLoader();
          handleShowMoreBtn();
      } catch {

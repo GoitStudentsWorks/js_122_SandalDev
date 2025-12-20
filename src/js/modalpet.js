@@ -2,19 +2,16 @@ import { refs } from './petslist/pets-render';
 import { petsData } from './partials.js';
 
 refs.petsList.addEventListener('click', async e => {
+    if (!e.target.classList.contains('find-out-more')) return;
+
     const petCard = e.target.closest('li');
-    console.log(petCard);
-    console.log('something');
     const id = petCard.dataset.id;
-    console.log(id);
     if (!id || id === 'undefined') {
         console.error('Invalid data-id on pet card');
         return;
     }
     const allPets = petsData;
-    console.log(allPets);
     const petItem = allPets.find(pet => pet._id === id);
-    console.log(petItem);
     if (!petItem) {
         console.error('Pet not found');
         return;
