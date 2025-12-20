@@ -45,9 +45,9 @@
 
 .hero-link:hover,
 .hero-link:focus {
+ border: 1px solid #02060a;
+  background: #c3b49d;
   color: #02060a;
-  background-color: #eee9e3;
-  border: 1px solid #88765c;
 }
 
 .hero-link:active {
