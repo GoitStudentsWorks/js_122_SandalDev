@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/html/html.png" width="90" alt="HTML" />
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" width="90" alt="CSS" />
-  <img src="https://raw.githubusercontent.com/github/explore/main/topics/javascript/javascript.png" width="90" alt="JavaScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="110" alt="HTML5" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="110" alt="CSS3" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="110" alt="JavaScript" />
 </div>
 
 <h1 align="center">🐾 Хатинка лапок</h1>
