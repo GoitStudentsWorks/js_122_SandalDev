@@ -1,15 +1,4 @@
-* ===== HEADER ===== */
-.header {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  height: 72px;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 998;
-  background-color: var(--scheme1-background);
-}
+
 
 
 .header-section,
