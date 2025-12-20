@@ -6,6 +6,7 @@ const aboutSwiper = new Swiper('.about-swiper', {
     pagination: {
         el: '.about-controls .swiper-pagination',
         clickable: true,
+        dynamicBullets: true,
     },
     navigation: {
         nextEl: '.swiper-button-next',
