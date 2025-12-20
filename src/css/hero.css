@@ -7,6 +7,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    min-width: 320px;
+    max-width: 375px;
+    margin: 0 auto;
 }
 
 /* overlay */
@@ -21,9 +25,8 @@
 .hero-container {
     position: relative;
     z-index: 1;
-    padding-top: 64px;
     padding-left: 20px;
-    max-width: 335px;
+    max-width: 375px;
 }
 
 /* content */
@@ -54,7 +57,6 @@
 /* text */
 .hero-text {
     max-width: 335px;
-
     font-size: 16px;
     line-height: 1.5;
     opacity: 0.9;
@@ -64,13 +66,11 @@
 /* button */
 .hero-anchor-link {
     align-self: flex-start;
-
     padding: 12px 18px;
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
     text-decoration: none;
-
     background-color: #88765c;
     border-radius: 12px;
 }
@@ -119,13 +119,15 @@
 
 @media (min-width: 768px) {
     .section-hero {
+        max-width: 768px;
+
+
         height: 544px;
         width: 100%;
         background-image: url("../img/hero/hero-tab-min.jpg");
     }
 
     .hero-container {
-        padding-top: 64px;
         padding-left: 32px;
         max-width: 622px;
     }
@@ -170,13 +172,14 @@
 
 @media (min-width: 1440px) {
     .section-hero {
+        max-width: 1440px;
         min-height: 720px;
         background-image: url("../img/hero/hero-desk-min.jpg");
     }
 
         .hero-container {
             max-width: 1312px;
-            padding: 100px 80px;
+            padding: 64px 80px;
             padding-right: 0;
             padding-bottom: 0;
         }
