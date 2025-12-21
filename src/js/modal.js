@@ -24,9 +24,9 @@ openBtn?.addEventListener('click', () => {
   petModal?.classList.add('is-hidden');
 });
 
-closeBtn.addEventListener('click', closeModal);
+closeBtn?.addEventListener('click', closeModal);
 
-backdrop.addEventListener('click', e => {
+backdrop?.addEventListener('click', e => {
   if (e.target === backdrop) closeModal();
 });
 
@@ -50,10 +50,10 @@ function clearError(input) {
   errorEl.textContent = '';
 }
 
-/* ================= SUBMIT ================= */
+/* ================= SUBMIT (FRONTEND ONLY) ================= */
 
-form.addEventListener('submit', async e => {
-  e.preventDefault();
+form?.addEventListener('submit', e => {
+  e.preventDefault(); // 🔴 критично
 
   const nameInput = form.elements.name;
   const phoneInput = form.elements.phone;
@@ -64,11 +64,13 @@ form.addEventListener('submit', async e => {
   clearError(nameInput);
   clearError(phoneInput);
 
+  /* Name validation */
   if (nameInput.value.trim().length < 2) {
     showError(nameInput, 'Імʼя повинно містити мінімум 2 символи');
     isValid = false;
   }
 
+  /* Phone validation */
   const phonePattern =
     /^\+38\s?\(?0\d{2}\)?\s?\d{3}\s?\d{2}\s?\d{2}$/;
 
@@ -79,34 +81,16 @@ form.addEventListener('submit', async e => {
 
   if (!isValid) return;
 
-  const data = {
-    name: nameInput.value.trim(),
-    phone: phoneInput.value.trim(),
-    comment,
-  };
+  /* ІМІТАЦІЯ ВІДПРАВКИ */
+  Swal.fire({
+    icon: 'success',
+    title: 'Заявку надіслано!',
+    text: 'Ми звʼяжемося з вами найближчим часом',
+    confirmButtonText: 'Добре',
+  });
 
-  try {
-    await fetch('/orders', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-
-    Swal.fire({
-      icon: 'success',
-      title: 'Заявку надіслано!',
-      text: 'Ми звʼяжемося з вами найближчим часом',
-    });
-
-    form.reset();
-    clearError(nameInput);
-    clearError(phoneInput);
-    closeModal();
-  } catch {
-    Swal.fire({
-      icon: 'error',
-      title: 'Помилка',
-      text: 'Спробуйте ще раз пізніше',
-    });
-  }
+  form.reset();
+  clearError(nameInput);
+  clearError(phoneInput);
+  closeModal();
 });
