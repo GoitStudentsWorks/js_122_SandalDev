@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 32px;
 }
 
 .footer-svg {
@@ -65,17 +66,23 @@
 
 
 .footer-reserved {
-    position: relative;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    color: #2b241a;
+    opacity: 0.8;
 }
 
-.footer-reserved::before {
+.footer-reserved ::before {
     content: "";
-    position: absolute;
-    top: -32px;
-    left: 0;
-    width: 100%;
+    display: block;
+    bottom: 32px;
     height: 1px;
+    width: 100%;
     background: #8b7a60;
+    position: relative;
+
 }
 
 @media screen and (min-width: 768px) {
@@ -93,6 +100,7 @@
 
     /* LOGO */
     .footer-logo {
+        margin-bottom: 32px;
     }
 
     .footer-svg {
@@ -140,7 +148,7 @@
 
     /* LOGO */
     .footer-logo {
-        margin-bottom: 50px;
+        margin-bottom: 32px;
     }
 
     .footer-svg {
