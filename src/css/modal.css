@@ -127,7 +127,6 @@
 .order-form__field {
   display: flex;
   flex-direction: column;
-  gap: 8px;
   margin-bottom: 24px;
   font-size: 14px;
   color: #02060a;
