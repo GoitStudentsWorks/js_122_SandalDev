@@ -40,7 +40,9 @@
 
     <div class="order-modal__inner">
       <h2 class="order-modal__title">
-        Залишіть заявку на знайомство
+        Залишіть<br />
+        заявку на<br />
+        знайомство
       </h2>
 
       <form class="order-form" data-order-form novalidate>
@@ -52,6 +54,7 @@
             name="name"
             placeholder="Андрій"
             class="order-form__input"
+            autocomplete="given-name"
             required
           />
           <p class="order-form__error"></p>
@@ -65,6 +68,7 @@
             name="phone"
             placeholder="+38 (095) 555 99 22"
             class="order-form__input"
+            autocomplete="tel"
             required
           />
           <p class="order-form__error"></p>
@@ -76,6 +80,7 @@
           <textarea
             name="comment"
             placeholder="Напишіть ваш коментар"
+            autocomplete="off"
           ></textarea>
         </label>
 
