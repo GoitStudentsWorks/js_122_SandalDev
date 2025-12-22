@@ -2,6 +2,7 @@ const burgerBtn = document.querySelector('.burger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeBtn = document.getElementById('data-burger-close');
 const menuLinks = document.querySelectorAll('.menu-link-menu');
+const takeFriendBtn = document.querySelector('.btn-header-mobile');
 
 let scrollY = 0;
 
@@ -32,6 +33,8 @@ function closeMenu() {
 burgerBtn.addEventListener('click', openMenu);
 
 closeBtn.addEventListener('click', closeMenu);
+
+takeFriendBtn.addEventListener('click', closeMenu);
 
 mobileMenu.addEventListener('click', (e) => {
   if (e.target === mobileMenu) {
