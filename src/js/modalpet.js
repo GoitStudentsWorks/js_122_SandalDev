@@ -8,13 +8,13 @@ function openPetModal() {
   document.body.style.overflow = 'hidden';
 }
 
-function closePetModal() {
+export function closePetModal() {
   refs.backdrop.classList.add('is-hidden');
   window.removeEventListener('keydown', handleClosePetModal);
   document.body.style.overflow = '';
 }
 
-function handleClosePetModal(e) {
+export function handleClosePetModal(e) {
   if (e.code === 'Escape') {
     closePetModal();
   }

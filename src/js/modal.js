@@ -1,5 +1,7 @@
 import iziToast from 'izitoast';
 import Swal from 'sweetalert2';
+import { closePetModal } from './modalpet';
+import { handleClosePetModal } from './modalpet';
 
 const closeBtn = document.querySelector('[data-order-close]');
 const backdrop = document.querySelector('[data-order-modal]');
@@ -12,6 +14,7 @@ let currentAnimalId = null;
 
 function onEscKeyPress(e) {
   if (e.key === 'Escape') closeOrderModal();
+  closePetModal();
 }
 
 /* ================= OPEN / CLOSE ORDER MODAL ================= */
@@ -25,6 +28,7 @@ function openOrderModal() {
 function closeOrderModal() {
   backdrop.classList.add('is-hidden');
   document.body.style.overflow = '';
+  closePetModal();
   document.removeEventListener('keydown', onEscKeyPress);
 }
 
