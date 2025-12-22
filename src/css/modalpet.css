@@ -71,13 +71,19 @@
     height: 240px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
   .pet-main-details-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .pet-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
   }
 
   .pet-type-paragraph {
@@ -119,10 +125,9 @@
 
  .modalpet-adopt-btn {
   display: flex;
+  padding: 12px 102px;
   width: 100%;
   margin: 0 auto;
-  min-width: 295px;
-  max-width: 350px;
   height: 45px;
   border-radius: 8px;
   justify-content: center;
@@ -130,6 +135,7 @@
   background-color: #88765C;
   font-size: 14px;
   line-height: 1.5;
+  margin-top: 8px;
   transition: background-color 250ms ease-in-out;
 }
 
@@ -178,13 +184,13 @@
       order: 1;
     }
 
-  .modalpet-adopt-btn {
-    order: 2;
-  }
+    .modalpet-adopt-btn {
+      order: 2;
+    }
 
-  .pet-details-container {
-    order: 3;
-  }
+    .pet-details-container {
+      order: 3;
+    }
 }
 
 
@@ -200,13 +206,12 @@
       border-radius: 12px;
     }
 
+    .pet-details-container {
+      order: 2;
+    }
+
     .modalpet-adopt-btn {
-      position: absolute;
-      bottom: 64px;
-      right: 64px;
-      top: auto;
-      width: calc((100% - 160px) / 2);
-      min-width: 0;    
+      order: 3;
       max-width: none;
       height: 48px;
       font-size: 16px;
