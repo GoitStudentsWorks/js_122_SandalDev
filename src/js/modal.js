@@ -114,27 +114,28 @@ form?.addEventListener('submit', e => {
   }
 
   // Зберігаємо формат з +38
-  const phone = phoneInput.value.trim();
-  const phoneDigits = phone.replace(/\D/g, '');
-  if (phoneDigits.length < 12) { // +38XXXXXXXXXX = 12 цифр з плюсом
-    showError(phoneInput, 'Номер повинен містити повний код країни та номер');
-    isValid = false;
-  }
+const phoneRaw = phoneInput.value.trim();
+const phoneDigits = phoneRaw.replace(/\D/g, '');
 
-  if (!isValid) {
-    iziToast.warning({
-      title: 'Упс!',
-      message: 'Введіть коректний номер телефону та імʼя.',
-    });
-    return;
-  }
+if (phoneDigits.length !== 12) {
+  showError(phoneInput, 'Номер повинен містити повний код країни та номер');
+  isValid = false;
+}
 
-  const payload = {
-    animalId: currentAnimalId,
-    name: userName,
-    phone: phone,
-    comment: comment,
-  };
+if (!isValid) {
+  iziToast.warning({
+    title: 'Упс!',
+    message: 'Введіть коректний номер телефону та імʼя.',
+  });
+  return;
+}
+
+const payload = {
+  animalId: currentAnimalId,
+  name: userName,
+  phone: phoneDigits, // ← тільки цифри
+  comment: comment,
+};
 
   fetch('https://paw-hut.b.goit.study/api/orders', {
     method: 'POST',
