@@ -1,5 +1,5 @@
 import { refs } from './petslist/pets-render';
-import { petsData } from './partials.js';
+import { petsData } from './petslist/pets-main';
 
 refs.petsList.addEventListener('click', async e => {
     if (!e.target.classList.contains('find-out-more')) return;
@@ -40,9 +40,10 @@ function handleCloseModal(e) {
 
 function renderPetModal(pet) {
     return `<img src="${pet.image}" class="modalpet-img" alt="${pet.shortDescription}" />
-    <div class="pet-content-wrapper">
-    <div class="pet-main-details-container">
 
+    <div class="pet-content-wrapper">
+
+    <div class="pet-main-details-container">
     <p class="pet-type-paragraph">${pet.species}</p>
     <h3 class="modalpet-name">${pet.name}</h3>
     <div class="modal-age-gender">
@@ -66,6 +67,11 @@ function renderPetModal(pet) {
     <span class="modal-descr-word">Поведінка:</span>
     <p class="modalpet-behaviour-desc">${pet.behavior}</p>
     </div>
+
+    <button type="button" class="modalpet-adopt-btn">
+      Взяти додому
+    </button>
+   
     </div>`
 };
 

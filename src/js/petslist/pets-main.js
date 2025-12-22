@@ -24,6 +24,7 @@ let currentPage = 1;
 let totalPages;
 let mode = "all";
 let categoryId;
+let petsData = [];
 
 async function loadMorePets() {
   currentPage++;
@@ -32,6 +33,7 @@ async function loadMorePets() {
   if (mode === "all") {
     try {
       const result = await getPetsList(currentPage);
+      petsData.push(...result.animals);
       renderMore(result.animals);
       totalPages = Math.ceil(result.totalItems / limit);
       handleShowMoreBtn(currentPage, totalPages);
@@ -48,6 +50,7 @@ async function loadMorePets() {
   } else if (mode === "category") {
     try {
       const result = await getPetsByCategory(categoryId, currentPage);
+      petsData.push(...result.animals);
       renderMore(result.animals);
       totalPages = Math.ceil(result.totalItems / limit);
       handleShowMoreBtn(currentPage, totalPages);
@@ -100,6 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     const petsResult = await getPetsList();
+    petsData = petsResult.animals;
     const petsMarkup = petsTemplate(petsResult.animals);
     refs.petsList.innerHTML = petsMarkup;
     totalPages = Math.ceil(petsResult.totalItems / limit);
@@ -137,6 +141,7 @@ refs.categories.addEventListener("click", async e => {
   if (id === "0") {
     try {
       const res = await getPetsList(currentPage);
+      petsData = res.animals;
       const markup = petsTemplate(res.animals);
       totalPages = Math.ceil(res.totalItems / limit);
       refs.petsList.innerHTML = markup;
@@ -153,6 +158,7 @@ refs.categories.addEventListener("click", async e => {
   } else {
     try {
       const res = await getPetsByCategory(id, currentPage);
+      petsData = res.animals;
       const markup = petsTemplate(res.animals);
       totalPages = Math.ceil(res.totalItems / limit);
       refs.petsList.innerHTML = markup;
@@ -170,6 +176,8 @@ refs.categories.addEventListener("click", async e => {
   handleShowMoreBtn(currentPage, totalPages);
   hideLoader();
 });
+
+export { petsData };
 
 
 

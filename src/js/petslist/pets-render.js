@@ -27,7 +27,15 @@ function handleShowMoreBtn(currentPage, totalPages) {
         showShowMoreBtn();
     } else {
         hideShowMoreBtn();
-    }
+        iziToast.show({
+            message: `We're sorry, but you've reached the end of search results.`,
+            color: 'blue',
+            position: 'topRight',
+            messageSize: '20',
+            timeout: '4000',
+            theme: 'dark',
+          });
+    };
 };
 
 function clearGallery() {
