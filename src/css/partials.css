@@ -185,8 +185,8 @@
 .find-out-more {
   border: 1px solid #02060A;
   border-radius: 8px;
+  padding: 9.5px 98px;
   padding: 8px 20px;
-  width: 311px;
   height: 40px;
   width: 100%;
   font-weight: 400;
@@ -209,10 +209,8 @@
 
 .show-more {
   display: flex;
-  width: 100%;
   margin: 0 auto;
-  min-width: 320px;
-  max-width: 375px;
+  padding: 12px 102px;
   height: 45px;
   border-radius: 8px;
   justify-content: center;
@@ -294,19 +292,29 @@
     flex-basis: calc((100% - 32px) / 2);
   }
 
-  .show-more {
-    width: 335px;
-  }
-
   .pet-image {
     width: 312px;
     height: 246px;
+  }
+
+  .show-more {
+    padding: 12px 112px;
   }
 }
 
 
 @media screen and (min-width: 1440px) {
   .category-btn {
+    font-size: 16px;
+  }
+
+  .show-more {
+    padding: 12px 32.5px;
+    font-size: 16px;
+  }
+
+  .find-out-more {
+    padding: 8px 130.5px;
     font-size: 16px;
   }
   
@@ -325,10 +333,6 @@
 
   .pets-list-section {
     padding: 80px 0;
-  }
-
-  .show-more {
-    width: 192px;
   }
 
   .pet-image {
