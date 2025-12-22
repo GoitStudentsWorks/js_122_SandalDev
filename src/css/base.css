@@ -19,6 +19,10 @@ h2 {
   letter-spacing: -0.01em;
 }
 
+p {
+  margin: 0;
+}
+
 button {
   background-color: #f6f4f1;;
   border: transparent;
