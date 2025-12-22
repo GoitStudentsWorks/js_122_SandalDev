@@ -117,10 +117,6 @@
 
   .section-hero-title {
     font-size: 56px;
-    line-height: 1.2;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
 }
 
     .section-hero-text {
@@ -141,6 +137,7 @@
         background-image: url(../img/hero/hero-desk@2x-min.jpg);
     }
 }
+
 
 
 
